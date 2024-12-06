@@ -1,4 +1,4 @@
-// NOTE THIS FILE IS THE ENTRY POINT OF OUR FRONTEND
+// NOTE THIS FILE IS THE ENTRY POINT OF OUR FRONTEND.
 import React from 'react';
 import ReactDOM from 'react-dom';
 

@@ -1,17 +1,19 @@
-import React from 'react';
-import UsersList from '../components/UsersList'
+import React from "react";
+import UsersList from "../components/UsersList";
 
 const Users = () => {
-    // NOTE: we dont have db, so users will be an array of js objects representing our DB, later on we will change to real DB.
-    const USERS = [
-        {
-            id:'u1',
-            name:'Max Schwarz',
-            image:'https://www.wikihow.com/images/thumb/4/41/Get-the-URL-for-Pictures-Draft-Step-1.jpg/v4-460px-Get-the-URL-for-Pictures-Draft-Step-1.jpg', places: 3
-        }
-        ]; 
+  //NOTE: DUMBY ARRAY OF USERS DATABASE - LATER ON IN THE COURSE WILL REPLACE THIS WITH FETCH GET REQUEST FOR USERS LIST
+  const USERS = [
+    {
+      id: "u1",
+      name: "Max Schwartz",
+      image:
+        "https://images.pexels.com/photos/839011/pexels-photo-839011.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      places: 3,
+    },
+  ];
 
-  return <UsersList items={}/>;
+  return <UsersList items={USERS} />;
 };
 
 export default Users;

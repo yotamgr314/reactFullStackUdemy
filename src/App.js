@@ -1,24 +1,39 @@
-import React from 'react';
-import {BrowserRouter as Router, Route, Redirect, Switch} from 'react-router-dom';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+  Redirect,
+  Switch,
+} from "react-router-dom";
 
-import Users from './user/pages/Users';
-import NewPlace from './places/pages/NewPlace';
+import Users from "./user/pages/Users";
+import NewPlace from "./places/pages/NewPlace";
 
 // THIS SECTION TAKES CARE OF RENDERING COMPONENTS BASED ON THE URL.(by BrowserRouter,Router,Route)
 const App = () => {
-  return (  
-    <Router> {/* NOTE: must surround all the pages we wish to display components based on url routes with Router component (which is BrowserRouter) */}
-      <Switch> {/* NOTE: insures that in case of multiple routs match it will render only the first matching route. */}
+  return (
+    <Router>
+      <Switch>
         <Route path="/" exact>
-          <Users /> {/* NOTE: renders the Users component when the web URL is: "http://localhost:3000/" */}
+          <Users />
         </Route>
-        <Route path="/places/new" exact> {/* NOTE: renders the NewPlace component when web URL is: "http://localhost:3000/places/new" */}
+        <Route path="/places/new" exact>
           <NewPlace />
         </Route>
-        <Redirect to="/" />  {/* NOTE: handles fallback gracefully and Redirects any unmatched routes to "http://localhost:3000/" - aka the homepage */}
-      </Switch> {/* prevents its default behavior which is to continue rendering all the other routes which are below the matched root. */}
+        <Redirect to="/" />
+      </Switch>
     </Router>
   );
 };
 
 export default App;
+
+/* 
+NOTE: instead of putting all the pages in one pages folder, and all the components in one component folder we will:
+01) create a folder for each "feature" in our web, like users, places, etc... 
+    01) inside each feature folder we will create:
+        01) components folder. NOTE: here will be the components which are not rendered as full screen components, for example a button component will be here.
+        02) pages folder. NOTE: here will be the components which are rendered as full screen components aka all of the place related pages. for example a new place component will be here. 
+
+02) in the shared folder there will be only components folder, which contains shared components that needed in multiple pages.
+*/
