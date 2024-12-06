@@ -40,10 +40,10 @@ const UsersList = (props) => {
         return (
           <UserItem
             key={user.id} // the key is for react purposes - react requires each item in a list to have an id. so it can follow it incase of removal or update and re render it.
-            id={user.id} // each userItem will have id. so we copy it from the ar
-            image={user.image}
-            name={user.name}
-            placeCount={user.places}
+            id={user.id} // each userItem will have id. so we copy it from the user object.
+            image={user.image} // etc
+            name={user.name} // etc
+            placeCount={user.places} //etc
           />
         );
       })}
